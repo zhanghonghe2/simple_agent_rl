@@ -1,0 +1,16 @@
+export DEEPSEEK_API_KEY=sk-...   # 换成你自己的 key；本文件是模板，复制为 bs.sh 后填写
+
+
+
+
+MODEL=/path/to/your_sft_model POOL=agent_data_math/rl_pool_v3.jsonl OUT=runs/zero_ppo \
+GPUS=2 ALGO=grpo CRITIC=none REWARD=zero_ppo/reward/reward_result.py \
+BATCH=16 GROUP=8 LUFFY=4 MINI_BATCH=4 PPO_EPOCHS=4 STEPS=40 KL_COEF=0.02 \
+LR=5e-6 MIN_LR_FRAC=0.1 SHUFFLE=1 EVAL_EVERY=10 \
+bash zero_ppo/train.sh
+
+python3 -m zero_ppo.eval \
+  --model runs/zero_ppo/checkpoints/best \
+  --pool agent_data_math/math500.jsonl \
+  --samples 8 --ks 1,2,4,8 --seed 0 --judge-api \
+  --out runs/eval_best > rl.out

@@ -1,0 +1,30 @@
+# ---- 密钥：永远不要提交 ----
+.env
+.env.*
+*secret*
+*credential*
+bs.sh
+my_*.sh
+
+# ---- 模型权重 ----
+*.safetensors
+*.pt
+*.bin
+*.gguf
+checkpoints/
+
+# ---- 训练产物 ----
+runs/
+*.log
+*.out
+*.err
+rl.out
+
+# ---- 系统 / 缓存 ----
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
+.idea/
