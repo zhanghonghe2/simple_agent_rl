@@ -392,7 +392,3 @@ done
 分层设计参考 [verl](https://github.com/volcengine/verl)；
 教师引导思路来自 [LUFFY](https://arxiv.org/abs/2504.14945)；
 超参与调度对齐 [open-r1](https://github.com/huggingface/open-r1) 的公开配方。
-
-## License
-
-（请在此填写你选择的许可证）
